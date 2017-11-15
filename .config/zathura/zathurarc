@@ -1,0 +1,58 @@
+set window-title-basename true
+set font                        "Ricty 15"
+set default-bg                  "#263238"
+set default-fg                  "#CFD8DC"
+
+set statusbar-bg                "#37474F"
+set statusbar-fg                "#B0BEC5"
+
+set inputbar-bg                 "#263238"
+set inputbar-fg                 "#CFD8DC"
+
+set notification-error-bg       "#E53935"
+set notification-error-fg       "#CFD8DC"
+
+set notification-warning-bg     "#FF7043"
+set notification-warning-fg     "#CFD8DC"
+
+set highlight-color             "#D500F9"
+set highlight-active-color      "#EA80FC"
+set highlight-transparency      "0.2"
+
+set completion-bg               "#37474F"
+set completion-fg               "#CFD8DC"
+
+set completion-highlight-bg     "#CFD8DC"
+set completion-highlight-fg     "#263238"
+
+set notification-bg             "#8C9EFF"
+set notification-fg             "#CFD8DC"
+
+set tabbar-bg                   "#263238"
+set tabbar-fg                   "#ECEFF1"
+set tabbar-focus-bg             "#263238"
+set tabbar-focus-fg             "#26A69A"
+set recolor-lightcolor          "#CFD8DC" 
+set recolor-darkcolor           "#263238"
+set recolor                     "false"
+
+# setting recolor-keep true will keep any color your pdf has.
+# if it is false, it'll just be black and white
+#set recolor-keephue             "false"
+set recolor-keephue "true"
+
+set adjust-open                 "width"
+set page-padding                "10"
+# guioptions show or hide certain GUI elements
+# c - alway show the command line, s - statusbar
+set guioptions                  "s"
+set show-scrollbars             "true"
+#set window-height               "600"
+#set window-width                "400"
+
+#map w adjust_window "width"
+#map z adjust_window "bestfit"
+#map i set recolor
+
+# set up clipboard
+set selection-clipboard clipboard
