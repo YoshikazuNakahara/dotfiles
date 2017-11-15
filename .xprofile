@@ -1,0 +1,8 @@
+xset r rate 200 25
+export GTK_IM_MODULE='uim'
+uim-xim &
+export XMODIFIERS='@im=uim'
+bash script/keymap.sh &
+redshift -c .config/redshift.conf &
+bash script/toggle-compton.sh &
+exec xmonad

@@ -1,0 +1,6 @@
+next_img     n space
+prev_img     p BackSpace
+scroll_up    C-Up C-p
+scroll_down  C-Down C-n
+scroll_left  C-Left C-b
+scroll_right C-Right C-f

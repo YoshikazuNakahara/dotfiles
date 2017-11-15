@@ -1,0 +1,6 @@
+xkb_compatibility "defm3" {
+    interpret Hyper_R { action = SetMods(modifiers=Mod3); };
+};
+xkb_compatibility "defm5" {
+    interpret Henkan_Mode { action = SetMods(modifiers=Mod5); };
+};
