@@ -1,0 +1,66 @@
+// The followings may need to be executed in the shell
+ // xset -r 100  # <MUHE>
+ // xset -r 102  # <HENK>
+ partial modifier_keys
+ xkb_symbols "usjis" {
+   include "us"
+   name[Group1]= "English (US) on JIS";
+ 
+   // NOTE: ISO_Level2_Latch = Sticky shift
+   replace key <AE13> { 
+       type= "PC_ALT_LEVEL2",
+       symbols[Group1]= [ Print, Sys_Req ]
+   };
+   replace key <AB11> { [ ISO_Level2_Latch ] };     // Ro
+   replace key <BKSL> { [ backslash, bar ] };     // Ro
+   replace key <HKTG> { [ Hyper_R ] };            // Hiragana/Katakana
+   replace key <MUHE> { [ Meta_R ] };         // Muhenkan
+   replace key <RALT> { [ Num_Lock ] };         // Muhenkan
+   replace key <LALT> { [ Super_L, Super_L ] };
+   replace key <LWIN> { [ Henkan ] };         // Muhenkan
+   replace key <HENK> { [ Control_R ] };  // Henkan
+   replace key <MENU> { [ Alt_L ] };
+ 
+   modifier_map Control { <HENK> };
+   modifier_map Lock    { <CAPS> };
+   modifier_map Shift   { <AB11> };
+   modifier_map Mod1    { <MUHE> };
+   modifier_map Mod3    { <HKTG> };
+   modifier_map Mod4    { <LALT> };
+   modifier_map Mod5    { <LWIN>  };
+ };
+
+partial alphanumeric_keys modifier_keys
+ xkb_symbols "emacs" {
+    name[Group3]= "Emacs keys"; // Group3に名前をつける
+    key.type = "TWO_LEVEL";
+    replace key <CAPS> { [ ISO_Last_Group, NoSymbol, Caps_Lock] , [ Caps_Lock ] };
+    replace key <TAB> { [ Escape , NoSymbol, Menu ] };
+    replace key <LFSH> { [ ISO_Group_Latch ] };
+    key <RTRN> { [ Return, NoSymbol, ISO_First_Group ] , [ ISO_First_Group ] };
+  key <AD08> { [ NoSymbol,NoSymbol, Tab ], [ Tab ] }; // i
+  key <AD10> { [ NoSymbol, NoSymbol, Up ],  [ Up ] }; // p
+  key <AC04> { [ NoSymbol, NoSymbol,  Right ], [ Right ] }; // f
+   key <AB05> { [ NoSymbol,  NoSymbol, Left ], [ Left ] }; // b
+  key <AC06> { [ NoSymbol, NoSymbol,  BackSpace ], [ BackSpace ] }; // h
+  key <AC03> { [ NoSymbol, NoSymbol, Delete ], [ Delete ] }; // d
+   key <AB07> { [ NoSymbol, NoSymbol, Return ], [ Return ] }; // m
+   key <AD03> { [ NoSymbol, NoSymbol, End ], [ End ] }; // e
+   key <AC01> { [ NoSymbol, NoSymbol,  Home ], [ Home ] }; // a
+   key <AC09> { [ NoSymbol, NoSymbol,  Next ], [ Next ] }; // l
+   key <AC02> { [ NoSymbol, NoSymbol,  Prior ], [ Prior ] };
+   key <AC10> { [ NoSymbol, NoSymbol,  Insert ], [ Insert ] }; // ;
+   key <AC11> { [ NoSymbol, NoSymbol,  Zenkaku_Hankaku ], [ Zenkaku_Hankaku ] }; // :
+  key <AE01> { [ NoSymbol, NoSymbol, F1 ], [ F1 ] };
+   key <AE02> { [ NoSymbol, NoSymbol,  F2 ], [ F2 ] };
+   key <AE03> { [ NoSymbol, NoSymbol,  F3 ], [ F3 ] };
+   key <AE04> { [ NoSymbol, NoSymbol,  F4 ], [ F4 ] };
+   key <AE05> { [ NoSymbol, NoSymbol,  F5 ], [ F5 ] };
+   key <AE06> { [ NoSymbol, NoSymbol,  F6 ], [ F6 ] };
+   key <AE07> { [ NoSymbol, NoSymbol,  F7 ], [ F7 ] };
+   key <AE08> { [ NoSymbol, NoSymbol,  F8 ], [ F8 ] };
+   key <AE09> { [ NoSymbol, NoSymbol,  F9 ], [ F9 ] };
+   key <AE10> { [ NoSymbol, NoSymbol,  F10 ], [ F10 ] };
+   key <AE11> { [ NoSymbol, NoSymbol,  F11 ], [ F11 ] };
+   key <AE12> { [ NoSymbol, NoSymbol,  F12 ], [ F12 ] };
+};
