@@ -2,8 +2,8 @@ source ~/.zplug/init.zsh
 # Pure theme
 zplug mafredri/zsh-async, from:github
 zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
-PURE_POMNPT_SYMBOL='>'
-PURE_GIT_DOWN_ARROW='+'
+PURE_PROMPT_SYMBOL='>'
+PURE_GIT_UP_ARROW='+'
 PURE_GIT_DOWN_ARROW='-'
 
 # Plugins
@@ -58,6 +58,12 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 [[ -n "${key[Up]}"   ]] && bindkey -- "${key[Up]}"   up-line-or-beginning-search
 [[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
+# 履歴ファイルの保存先
+export HISTFILE=${HOME}/.cache/zsh/histfile
+# メモリに保存される履歴の件数
+export HISTSIZE=1000
+# 履歴ファイルに保存される履歴の件数
+export SAVEHIST=100000
 
 #Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -68,7 +74,6 @@ if ! zplug check --verbose; then
 fi
 # help
 autoload -Uz run-help
-unalias run-help
 alias help=run-help
 autoload -Uz run-help-git
 autoload -Uz run-help-ip
@@ -78,4 +83,5 @@ autoload -Uz run-help-sudo
 autoload -Uz run-help-svk
 autoload -Uz run-help-svn
 # Then, source plugins and add commands to $PATH
-zplug load --verbose
+#zplug load --verbose
+zplug load
